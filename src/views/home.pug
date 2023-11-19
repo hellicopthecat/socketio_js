@@ -1,0 +1,58 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Noom
+        link(rel="stylesheet", href="https://unpkg.com/mvp.css") 
+        style. 
+            #roomCont {
+                width : 850px;
+                border: 1px solid rgba(0,0,0,0.1);
+            }
+            #roomCont > h2 {
+                margin: 20px;
+            }
+            #chatCont {
+                width : 850px;
+                height : 500px;
+                overflow-y: scroll;
+                border: 1px solid rgba(0,0,0,0.1);
+
+            }
+            #chatCont > h2 {
+                margin: 20px;
+            }
+            #chatCont > ul {
+                font-size: 30px;
+            }
+    body
+        header
+            h1 Noom
+        main
+            #roomCont
+                h2 ROOM LIST
+                ul
+                form#roomForm
+                    label(for="roomFiled") CREATE CHAT ROOM 
+                    input#roomField(type='text' name="roomFiled" placeholder="Create Chatting Room")
+                    button Create
+            
+            #nickCont
+                form#nickForm
+                    label(for='nickField') NICKNAME 
+                    input#nickField(type="text", name="nickField" placeholder="Write on Nickname")
+                    button DONE 
+            #chatCont
+                h2 Chat Room
+                ul#chat
+            #msgCont
+                form#msgForm
+                    label(for="msgField") MESSAGE 
+                    input#msgField(type='text',name="msgField" placeholder="Write On Message")
+                    button SEND
+
+            
+        script(src="/socket.io/socket.io.js") 
+        script(src="/public/app.js") 
